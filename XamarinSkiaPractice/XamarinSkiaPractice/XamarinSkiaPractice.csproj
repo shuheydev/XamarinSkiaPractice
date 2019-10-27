@@ -17,7 +17,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Balloon.xaml">
+    <Reference Include="BalloonControll">
+      <HintPath>..\..\BalloonControll\bin\Debug\netstandard2.0\BalloonControll.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Controlls\Balloon\Balloon.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

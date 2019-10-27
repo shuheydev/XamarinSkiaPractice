@@ -3,14 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:mysk="clr-namespace:XamarinSkiaPractice"
-             xmlns:skiaforms="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             xmlns:mysk="clr-namespace:XamarinSkiaPractice.Controlls.Balloon"
              mc:Ignorable="d"
              x:Class="XamarinSkiaPractice.MainPage">
 
-    <!--<skiaforms:SKCanvasView x:Name="canvasView"
-                        PaintSurface="canvasView_PaintSurface"/>-->
-    <!--<mysk:CustomControll x:Name="helloMycanvas"/>-->
-    <mysk:Balloon/>
+    <!--<mysk:Balloon/>-->
+    <mysk:Balloon Text="わーお"
+                  MouthDirection="Left"/>
 
 </ContentPage>
