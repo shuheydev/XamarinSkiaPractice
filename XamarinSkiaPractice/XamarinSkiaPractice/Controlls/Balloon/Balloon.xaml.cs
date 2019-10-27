@@ -1,5 +1,7 @@
-﻿using System;
+﻿using SkiaSharp;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +11,7 @@ using Xamarin.Forms.Xaml;
 
 namespace XamarinSkiaPractice.Controlls.Balloon
 {
+    [DesignTimeVisible(true)]
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Balloon : ContentView
     {
@@ -41,6 +44,25 @@ namespace XamarinSkiaPractice.Controlls.Balloon
         {
             var control = (Balloon)bindable;
             control.balloonMouth.MouthDirection = (MouthDirection)newValue;
+            control.balloonMouth.InvalidateSurface();//再描画
+        }
+
+        public Color ForegroundColor { get; set; }
+        public static readonly BindableProperty ForegroundColorProperty = BindableProperty.Create(
+                propertyName: "ForegroundColor",
+                returnType: typeof(Color),
+                declaringType: typeof(Balloon),
+                defaultValue: null,
+                defaultBindingMode: BindingMode.TwoWay,
+                propertyChanged: ForegroundColorPropertyChanged
+            );
+        private static void ForegroundColorPropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var control = (Balloon)bindable;
+            var color = (Color)newValue;
+            control.boxView.BackgroundColor = color;
+            control.balloonMouth.ForegroundColor = color;
+            control.balloonMouth.InvalidateSurface();//再描画
         }
 
         #endregion

@@ -2,13 +2,17 @@
 using SkiaSharp.Views.Forms;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using Xamarin.Forms;
 
 namespace XamarinSkiaPractice.Controlls.Balloon
 {
+    [DesignTimeVisible(true)]
     public class BalloonMouth : SKCanvasView
     {
+        #region Properties
+
         public MouthDirection MouthDirection { get; set; }
         public static readonly BindableProperty MouthDirectionProperty = BindableProperty.Create(
                 propertyName: "MouthDirection",
@@ -24,6 +28,22 @@ namespace XamarinSkiaPractice.Controlls.Balloon
             control.MouthDirection = (MouthDirection)newValue;
         }
 
+        public Color ForegroundColor { get; set; }
+        public static readonly BindableProperty ForegroundColorProperty = BindableProperty.Create(
+                propertyName: "ForegroundColor",
+                returnType: typeof(Color),
+                declaringType: typeof(Balloon),
+                defaultValue: null,
+                defaultBindingMode: BindingMode.TwoWay,
+                propertyChanged: ForegroundColorPropertyChanged
+            );
+        private static void ForegroundColorPropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var control = (Balloon)bindable;
+            control.ForegroundColor = (Color)newValue;
+        }
+
+        #endregion
 
         protected override void OnPaintSurface(SKPaintSurfaceEventArgs e)
         {
@@ -64,7 +84,7 @@ namespace XamarinSkiaPractice.Controlls.Balloon
             SKPaint fillPaint = new SKPaint
             {
                 Style = SKPaintStyle.Fill,
-                Color = SKColors.Bisque
+                Color =SKColor.Parse(this.ForegroundColor.ToHex())// SKColors.Bisque
             };
 
             canvas.DrawPath(path, fillPaint);

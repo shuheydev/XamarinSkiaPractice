@@ -15,10 +15,9 @@
                      CornerRadius="10"
                      Margin="20,10"
                      HorizontalOptions="FillAndExpand"/>
-            <Label x:Name="label"
+        <Label x:Name="label"
                    Margin="30,15"
                    LineBreakMode="CharacterWrap"
                    VerticalOptions="FillAndExpand"/>
-
-        </Grid>
+    </Grid>
 </ContentView>

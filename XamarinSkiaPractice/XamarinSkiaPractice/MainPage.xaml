@@ -9,6 +9,8 @@
 
     <!--<mysk:Balloon/>-->
     <mysk:Balloon Text="わーお"
+                  ForegroundColor="Red"
+                  BackgroundColor="DarkGreen"
                   MouthDirection="Left"/>
 
 </ContentPage>
