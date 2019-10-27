@@ -65,6 +65,22 @@ namespace XamarinSkiaPractice.Controlls.Balloon
             control.balloonMouth.InvalidateSurface();//再描画
         }
 
+        public Color TextColor { get; set; }
+        public static readonly BindableProperty TextColorProperty = BindableProperty.Create(
+                propertyName: "TextColorProperty",
+                returnType: typeof(Color),
+                declaringType: typeof(Balloon),
+                defaultValue: Color.Default,
+                defaultBindingMode: BindingMode.TwoWay,
+                propertyChanged: TextColorPropertyChanged
+            );
+        private static void TextColorPropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var control = (Balloon)bindable;
+            var color = (Color)newValue;
+            control.label.TextColor = color;
+        }
+
         #endregion
 
         public Balloon()

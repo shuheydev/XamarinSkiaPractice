@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using XamarinSkiaPractice.Models;
+using XamarinSkiaPractice.ViewModels;
 
 namespace XamarinSkiaPractice
 {
@@ -18,6 +20,12 @@ namespace XamarinSkiaPractice
         public MainPage()
         {
             InitializeComponent();
+
+            var vm = new MainPageViewModel();
+            this.BindingContext = vm;
+
+            vm.Messages.Add(new Message { Text = "はろー" });
+            vm.Messages.Add(new Message { Text = "はろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろー" });
         }
     }
 

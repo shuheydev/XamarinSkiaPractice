@@ -9,7 +9,7 @@ using Xamarin.Forms;
 namespace XamarinSkiaPractice.Controlls.Balloon
 {
     [DesignTimeVisible(true)]
-    public class BalloonMouth : SKCanvasView
+    internal class BalloonMouth : SKCanvasView
     {
         #region Properties
 

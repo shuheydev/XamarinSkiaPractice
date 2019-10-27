@@ -4,13 +4,38 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:mysk="clr-namespace:XamarinSkiaPractice.Controlls.Balloon"
+             xmlns:mysk2="clr-namespace:XamarinSkiaPractice.Controlls.Balloon"
+             xmlns:vm="clr-namespace:XamarinSkiaPractice.ViewModels"
+             xmlns:models="clr-namespace:XamarinSkiaPractice.Models"
              mc:Ignorable="d"
              x:Class="XamarinSkiaPractice.MainPage">
 
-    <!--<mysk:Balloon/>-->
-    <mysk:Balloon Text="わーお"
-                  ForegroundColor="Red"
-                  BackgroundColor="DarkGreen"
-                  MouthDirection="Left"/>
+    <d:ContentPage.BindingContext>
+        <vm:MainPageViewModel/>
+    </d:ContentPage.BindingContext>
+    <ListView
+        ItemsSource="{Binding Messages}"
+        FlowDirection="LeftToRight"
+        HasUnevenRows="True"
+        SeparatorVisibility="None"
+        VerticalOptions="End">
+        <ListView.ItemTemplate>
+            <DataTemplate x:DataType="models:Message">
+                <ViewCell>
+                    <Grid
+                            HorizontalOptions="End"
+                            VerticalOptions="FillAndExpand">
+                            <mysk:Balloon
+                                Text="{Binding Text}"
+                                ForegroundColor="Bisque"
+                                MouthDirection="Right"
+                                TextColor="Red"/>
+                        </Grid>
+
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+        
+    </ListView>
 
 </ContentPage>

@@ -7,17 +7,17 @@
              mc:Ignorable="d"
              x:Class="XamarinSkiaPractice.Controlls.Balloon.Balloon">
 
-        <Grid
-            VerticalOptions="FillAndExpand">
+    <Grid>
         <mysk:BalloonMouth x:Name="balloonMouth"/>
         <BoxView x:Name="boxView"
-                     BackgroundColor="Bisque"
-                     CornerRadius="10"
-                     Margin="20,10"
-                     HorizontalOptions="FillAndExpand"/>
+                CornerRadius="10"
+                Margin="20,10"
+                HorizontalOptions="FillAndExpand"/>
         <Label x:Name="label"
                    Margin="30,15"
                    LineBreakMode="CharacterWrap"
-                   VerticalOptions="FillAndExpand"/>
+                   VerticalOptions="FillAndExpand"
+                   VerticalTextAlignment="Center"/>
     </Grid>
+
 </ContentView>
