@@ -3,8 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:mysk="clr-namespace:XamarinSkiaPractice.Controlls.Balloon"
-             xmlns:mysk2="clr-namespace:XamarinSkiaPractice.Controlls.Balloon"
+             xmlns:balloon="clr-namespace:BalloonControl;assembly=BalloonControl"
              xmlns:vm="clr-namespace:XamarinSkiaPractice.ViewModels"
              xmlns:models="clr-namespace:XamarinSkiaPractice.Models"
              mc:Ignorable="d"
@@ -23,14 +22,14 @@
             <DataTemplate x:DataType="models:Message">
                 <ViewCell>
                     <Grid
-                            HorizontalOptions="End"
-                            VerticalOptions="FillAndExpand">
-                            <mysk:Balloon
-                                Text="{Binding Text}"
-                                ForegroundColor="Bisque"
-                                MouthDirection="Right"
-                                TextColor="Red"/>
-                        </Grid>
+                        HorizontalOptions="End"
+                        VerticalOptions="FillAndExpand">
+                        <balloon:Balloon
+                            Text="{Binding Text}"
+                            ForegroundColor="Yellow"
+                            MouthDirection="Right"
+                            TextColor="{Binding Color}"/>
+                    </Grid>
 
                 </ViewCell>
             </DataTemplate>

@@ -24,8 +24,8 @@ namespace XamarinSkiaPractice
             var vm = new MainPageViewModel();
             this.BindingContext = vm;
 
-            vm.Messages.Add(new Message { Text = "はろー" });
-            vm.Messages.Add(new Message { Text = "はろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろー" });
+            vm.Messages.Add(new Message { Text = "はろー", Color = Color.Blue });
+            vm.Messages.Add(new Message { Text = "はろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろー", Color = Color.Green });
         }
     }
 

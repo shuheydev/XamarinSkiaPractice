@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace XamarinSkiaPractice.Controlls.Balloon
+namespace BalloonControl
 {
     public enum MouthDirection
     {

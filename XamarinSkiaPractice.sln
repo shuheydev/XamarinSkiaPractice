@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinSkiaPractice.Android
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XamarinSkiaPractice", "XamarinSkiaPractice\XamarinSkiaPractice\XamarinSkiaPractice.csproj", "{37A2B1D1-62AD-4897-B550-272DCBC9679C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BalloonControll", "BalloonControll\BalloonControll.csproj", "{51FA631B-1F9E-42B1-AD42-EE9DE6B49031}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BalloonControl", "BalloonControl\BalloonControl.csproj", "{51FA631B-1F9E-42B1-AD42-EE9DE6B49031}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

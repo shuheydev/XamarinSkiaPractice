@@ -1,15 +1,9 @@
-﻿using SkiaSharp;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace XamarinSkiaPractice.Controlls.Balloon
+namespace BalloonControl
 {
     [DesignTimeVisible(true)]
     [XamlCompilation(XamlCompilationOptions.Compile)]

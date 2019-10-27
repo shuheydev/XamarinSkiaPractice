@@ -1,12 +1,9 @@
 ﻿using SkiaSharp;
 using SkiaSharp.Views.Forms;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Text;
 using Xamarin.Forms;
 
-namespace XamarinSkiaPractice.Controlls.Balloon
+namespace BalloonControl
 {
     [DesignTimeVisible(true)]
     internal class BalloonMouth : SKCanvasView
@@ -84,7 +81,7 @@ namespace XamarinSkiaPractice.Controlls.Balloon
             SKPaint fillPaint = new SKPaint
             {
                 Style = SKPaintStyle.Fill,
-                Color =SKColor.Parse(this.ForegroundColor.ToHex())// SKColors.Bisque
+                Color =SKColor.Parse(this.ForegroundColor.ToHex())
             };
 
             canvas.DrawPath(path, fillPaint);
