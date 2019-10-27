@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:balloon="clr-namespace:BalloonControl;assembly=BalloonControl"
              xmlns:vm="clr-namespace:XamarinSkiaPractice.ViewModels"
+             xmlns:local="clr-namespace:XamarinSkiaPractice"
              xmlns:models="clr-namespace:XamarinSkiaPractice.Models"
              mc:Ignorable="d"
              x:Class="XamarinSkiaPractice.MainPage">
@@ -12,29 +13,53 @@
     <d:ContentPage.BindingContext>
         <vm:MainPageViewModel/>
     </d:ContentPage.BindingContext>
-    <ListView
-        ItemsSource="{Binding Messages}"
-        FlowDirection="LeftToRight"
-        HasUnevenRows="True"
-        SeparatorVisibility="None"
-        VerticalOptions="End">
-        <ListView.ItemTemplate>
-            <DataTemplate x:DataType="models:Message">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="FromLeftTemplate">
+                <ViewCell>
+                    <Grid
+                        HorizontalOptions="Start"
+                        VerticalOptions="FillAndExpand">
+                        <balloon:Balloon
+                            Text="{Binding Text}"
+                            ForegroundColor="Bisque"
+                            MouthDirection="{Binding MouthDirection}"
+                            TextColor="{Binding Color}"/>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+            <DataTemplate x:Key="FromRightTemplate">
                 <ViewCell>
                     <Grid
                         HorizontalOptions="End"
                         VerticalOptions="FillAndExpand">
                         <balloon:Balloon
                             Text="{Binding Text}"
-                            ForegroundColor="Yellow"
-                            MouthDirection="Right"
+                            ForegroundColor="RoyalBlue"
+                            MouthDirection="{Binding MouthDirection}"
                             TextColor="{Binding Color}"/>
                     </Grid>
-
                 </ViewCell>
             </DataTemplate>
-        </ListView.ItemTemplate>
+            <local:MyDataTemplateSelector x:Key="MyDataTemplateSelector"
+                FromLeftTemplate="{StaticResource FromLeftTemplate}"
+                FromRightTemplate="{StaticResource FromRightTemplate}" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <StackLayout>
+        <ListView
+            ItemsSource="{Binding Messages}"
+            FlowDirection="LeftToRight"
+            HasUnevenRows="True"
+            SeparatorVisibility="None"
+            VerticalOptions="End"
+            ItemTemplate="{StaticResource MyDataTemplateSelector}">
+
+        </ListView>
         
-    </ListView>
+    </StackLayout>
+
 
 </ContentPage>

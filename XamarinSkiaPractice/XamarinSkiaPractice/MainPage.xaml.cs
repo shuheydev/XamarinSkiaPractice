@@ -1,4 +1,5 @@
-﻿using SkiaSharp;
+﻿using BalloonControl;
+using SkiaSharp;
 using SkiaSharp.Views.Forms;
 using System;
 using System.Collections.Generic;
@@ -24,8 +25,9 @@ namespace XamarinSkiaPractice
             var vm = new MainPageViewModel();
             this.BindingContext = vm;
 
-            vm.Messages.Add(new Message { Text = "はろー", Color = Color.Blue });
-            vm.Messages.Add(new Message { Text = "はろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろーはろー", Color = Color.Green });
+            vm.Messages.Add(new Message { Text = "こんにちは", Color = Color.Blue, MouthDirection = MouthDirection.Left });
+            vm.Messages.Add(new Message { Text = "吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。", Color = Color.Red, MouthDirection = MouthDirection.Right });
+            vm.Messages.Add(new Message { Text = "さようなら", Color = Color.Blue, MouthDirection = MouthDirection.Left });
         }
     }
 
