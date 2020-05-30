@@ -6,7 +6,6 @@
              xmlns:balloon="clr-namespace:BalloonControl;assembly=BalloonControl"
              xmlns:vm="clr-namespace:XamarinSkiaPractice.ViewModels"
              xmlns:local="clr-namespace:XamarinSkiaPractice"
-             xmlns:models="clr-namespace:XamarinSkiaPractice.Models"
              mc:Ignorable="d"
              x:Class="XamarinSkiaPractice.MainPage">
 

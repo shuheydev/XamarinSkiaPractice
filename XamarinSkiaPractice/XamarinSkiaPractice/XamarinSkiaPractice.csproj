@@ -18,7 +18,7 @@
 
   <ItemGroup>
     <Reference Include="BalloonControl">
-      <HintPath>..\..\BalloonControl\bin\Debug\netstandard2.0\BalloonControl.dll</HintPath>
+      <HintPath>..\..\..\BalloonControl\BalloonControl\bin\Debug\netstandard2.0\BalloonControl.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>
